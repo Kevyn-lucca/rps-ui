@@ -1,15 +1,13 @@
+//variables used on the script
 let PlayerText = document.querySelector("#human");
 let RobotText = document.querySelector("#robot");
-
-
+let WinnerText = document.querySelector("Winner")
 let PlayerPlay = GetPlayerAnswer();
 let ComputerPlay = GetComputerAnswer();
 let HumanPoints = 0;
 let MachinePoints = 0;
 
-function GetPlayerAnswer(){
 
-}
 //Computer picks between(paper, rock and scissor)
 
 function GetComputerAnswer(){
@@ -26,14 +24,11 @@ function GetComputerAnswer(){
     }
 }
 
-//Players answer and variables
-
-
-
-
 //plays the game and compare both machine answer and player answer
 
 //essa função deve ser iniciada a partir de um evento de click
+
+
 
 function PlayGame(PlayerPlay,ComputerPlay){
         if (PlayerPlay == "paper" && ComputerPlay == "scissor"){
