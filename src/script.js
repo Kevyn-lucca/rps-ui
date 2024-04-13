@@ -1,9 +1,15 @@
-// essa função deve pegar o valor de um dos tres botões apertados.
+let PlayerText = document.querySelector("#human");
+let RobotText = document.querySelector("#robot");
+
+
+let PlayerPlay = GetPlayerAnswer();
+let ComputerPlay = GetComputerAnswer();
+let HumanPoints = 0;
+let MachinePoints = 0;
 
 function GetPlayerAnswer(){
 
 }
-
 //Computer picks between(paper, rock and scissor)
 
 function GetComputerAnswer(){
@@ -22,10 +28,7 @@ function GetComputerAnswer(){
 
 //Players answer and variables
 
-let PlayerPlay = GetPlayerAnswer();
-let ComputerPlay = GetComputerAnswer();
-let HumanPoints = 0;
-let MachinePoints = 0;
+
 
 
 //plays the game and compare both machine answer and player answer
@@ -67,7 +70,3 @@ function PlayGame(PlayerPlay,ComputerPlay){
     }
 
 }
-
-//O resultado da partida deve aparecer na tela
-
-console.log(PlayGame(PlayerPlay,ComputerPlay));
