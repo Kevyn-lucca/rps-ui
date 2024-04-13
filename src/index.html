@@ -8,13 +8,14 @@
 </head>
 <body class="bg-gradient-to-r from-sky-500 to-indigo-500">
     <div class="place-content-center flex gap-20 mt-52">
-    <button class="border-2 p-5 rounded-full border-white hover:text-opacity-100 hover:bg-red-600 hover:bg-opacity-50 text-white text-opacity-0">Paper</button>
-    <button class="border-2 p-5 rounded-full border-white hover:text-opacity-100 hover:bg-green-500 hover:bg-opacity-50 text-white text-opacity-0">Rock</button>
-    <button class="border-2 p-5 rounded-full border-white hover:text-opacity-100  hover:bg-yellow-500 hover:bg-opacity-50 text-white text-opacity-0">Scissor</button>
+    <button value= 1 class="border-2 p-5 rounded-full border-white hover:bg-red-600 hover:bg-opacity-50 text-white">Paper</button>
+    <button value= 2 class="border-2 p-5 rounded-full border-white hover:bg-green-500 hover:bg-opacity-50 text-white">Rock</button>
+    <button value= 3 class="border-2 p-5 rounded-full border-white  hover:bg-yellow-500 hover:bg-opacity-50 text-white">Scissor</button>
     </div>
     <div class="place-content-center place-items-center flex flex-col mt-10">
         <p class=" text-white">Pontuação dos humanos: <span id="human"> </span></p>
         <p class=" text-white">Pontuação das maquinas: <span id="robot"> </span></p>
+        <p id = "winner" class="text-white"></p>
     </div>
     <script src="/src/script.js"></script>
 </body>

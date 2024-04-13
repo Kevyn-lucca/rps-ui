@@ -1,67 +1,56 @@
 //variables used on the script
+
 let PlayerText = document.querySelector("#human");
 let RobotText = document.querySelector("#robot");
-let WinnerText = document.querySelector("Winner")
-let PlayerPlay = GetPlayerAnswer();
-let ComputerPlay = GetComputerAnswer();
+let WinnerText = document.querySelector("#winner");
+let btn = document.querySelectorAll("button");
 let HumanPoints = 0;
 let MachinePoints = 0;
 
+//plays the game and compare both machine answer and player answer on button click
 
-//Computer picks between(paper, rock and scissor)
+btn.forEach(btn =>{
+    btn.addEventListener("click",() => {
 
-function GetComputerAnswer(){
-    let ComputerAnswer = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+        PlayerText.textContent = HumanPoints;
 
-    if (ComputerAnswer == 1){
-        return ComputerAnswer  = "rock"
-    }
-    if(ComputerAnswer == 2){
-        return ComputerAnswer = "paper"
-    }
-    else {
-        return ComputerAnswer = "scissor"
-    }
-}
+        RobotText.textContent = MachinePoints;
+        
+        PlayerPlay = btn.getAttribute("value")
+        let ComputerAnswer = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
 
-//plays the game and compare both machine answer and player answer
-
-//essa função deve ser iniciada a partir de um evento de click
-
-
-
-function PlayGame(PlayerPlay,ComputerPlay){
-        if (PlayerPlay == "paper" && ComputerPlay == "scissor"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} machine victory, viva skynet`)
+        if (PlayerPlay == 1 && ComputerAnswer === 3){
+            WinnerText.textContent = "you played paper the machine played scissor machine victory, viva skynet"
             return MachinePoints++
         }
-        if (PlayerPlay == "scissor" && ComputerPlay == "rock"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} machine victory, viva skynet`)
+        if (PlayerPlay == 3 && ComputerAnswer === 1){
+            WinnerText.textContent =  "you played scissor the machine played rock machine victory, viva skynet"
             return MachinePoints++
         }
-        if (PlayerPlay == "rock" && ComputerPlay == "paper"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} machine victory, viva skynet`)
+        if (PlayerPlay == 2 && ComputerAnswer === 2){
+            WinnerText.textContent = "you played rock the machine played paper machine victory, viva skynet"
             return MachinePoints++
         }
-        if (PlayerPlay == "paper" && ComputerPlay == "scissor"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} machine victory, viva skynet`)
+        if (PlayerPlay == 1 && ComputerAnswer === 3 ){
+            WinnerText.textContent =  "you played paper the machine played scissor machine victory, viva skynet"
             return MachinePoints++
         }
-        if (PlayerPlay == "scissor" && ComputerPlay == "paper"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} Human victory, Humans reing supreme`)
+        if (PlayerPlay == 3 && ComputerAnswer === 2 ){
+            WinnerText.textContent =  "you played scissor the machine played paper Human victory, Humans reing supreme"
             return HumanPoints++
         }
-        if (PlayerPlay == "rock" && ComputerPlay == "scissor"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} Human victory, Humans reing supreme`)
+        if (PlayerPlay == 2 && ComputerAnswer ===  3 ){
+            WinnerText.textContent =  "you played rock the machine played scissor Human victory, Humans reing supreme"
             return HumanPoints++
         }
-        if (PlayerPlay == "paper" && ComputerPlay == "rock"){
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} Human victory, Humans reing supreme`)
+        if (PlayerPlay == 1 && ComputerAnswer === 1 ){
+            WinnerText.textContent =  "you played paper the machine played rock Human victory, Humans reing supreme"
             return HumanPoints++
         }
-        else if (PlayerPlay === ComputerPlay) {
-            console.log (`you played ${PlayerPlay} the machine played ${ComputerPlay} its a tie`)
+        else if (PlayerPlay === ComputerAnswer){
+            WinnerText.textContent = "its a tie"
+        }
 
     }
-
-}
+)
+});
