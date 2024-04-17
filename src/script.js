@@ -1,3 +1,5 @@
+//theres a bug that makes you need to press the button twice
+
 //variables used on the script
 
 let PlayerText = document.querySelector("#human");
